@@ -1,0 +1,103 @@
+# ============================================================
+#  CoinShop - Einstellungen
+#  Nach Änderungen im Spiel / in der Konsole: /coinsadmin reload
+# ============================================================
+
+# ---------------- Erfolge (Achievements) ----------------
+achievements:
+  enabled: true
+  # So viele Coins gibt es für jeden normalen Erfolg
+  default-reward: 10
+  # Eigene Belohnung für einzelne Erfolge (überschreibt default-reward).
+  # Beispiele (Zeilen mit # davor sind auskommentiert, also inaktiv):
+  overrides:
+    # "minecraft:story/mine_diamond": 50
+    # "minecraft:end/kill_dragon": 500
+    # "minecraft:adventure/kill_all_mobs": 200
+    "minecraft:story/root": 0
+
+# ---------------- Coins allgemein ----------------
+coins:
+  # Größter Betrag, der auf einmal überwiesen werden darf (Schutz vor Tippfehlern)
+  max-transfer: 1000000000
+
+# ---------------- Server-Shop ----------------
+server-shop:
+  # Wie viele Angebote gleichzeitig (das Menü ist für 10 gebaut - nicht ändern)
+  offers: 10
+  # Zeitzone und Uhrzeit des täglichen Wechsels
+  timezone: "Europe/Berlin"
+  reset-hour: 12
+  # Wie oft ein Spieler EIN Angebot pro Tag kaufen darf (0 = unbegrenzt)
+  purchase-limit-per-offer: 3
+  # Der "Topf", aus dem täglich 10 zufällige Items gezogen werden.
+  #   min / max = zufällige Menge pro Kauf
+  #   price     = Preis pro EINZELNEM Item (Gesamtpreis = Menge x price, ab dann fest für den Tag)
+  # Du kannst beliebig Einträge hinzufügen oder löschen (gültige Namen: Minecraft-Material-Namen in Großbuchstaben).
+  pool:
+    COBBLESTONE:      {min: 16, max: 64, price: 1}
+    SAND:             {min: 16, max: 64, price: 1}
+    TORCH:            {min: 16, max: 64, price: 1}
+    ARROW:            {min: 16, max: 48, price: 1}
+    GLASS:            {min: 16, max: 48, price: 2}
+    OAK_LOG:          {min: 8,  max: 32, price: 2}
+    BONE:             {min: 8,  max: 24, price: 2}
+    STRING:           {min: 8,  max: 24, price: 2}
+    BREAD:            {min: 8,  max: 24, price: 2}
+    COAL:             {min: 8,  max: 32, price: 3}
+    REDSTONE:         {min: 8,  max: 32, price: 3}
+    COPPER_INGOT:     {min: 8,  max: 32, price: 3}
+    QUARTZ:           {min: 8,  max: 32, price: 3}
+    GLOWSTONE_DUST:   {min: 8,  max: 32, price: 3}
+    COOKED_BEEF:      {min: 8,  max: 24, price: 3}
+    LAPIS_LAZULI:     {min: 8,  max: 24, price: 4}
+    LEATHER:          {min: 4,  max: 16, price: 4}
+    PRISMARINE_SHARD: {min: 4,  max: 16, price: 4}
+    AMETHYST_SHARD:   {min: 4,  max: 16, price: 4}
+    GOLDEN_CARROT:    {min: 4,  max: 12, price: 5}
+    IRON_INGOT:       {min: 4,  max: 16, price: 6}
+    SLIME_BALL:       {min: 4,  max: 12, price: 6}
+    GOLD_INGOT:       {min: 4,  max: 12, price: 8}
+    TNT:              {min: 2,  max: 8,  price: 8}
+    HAY_BLOCK:        {min: 2,  max: 8,  price: 8}
+    OBSIDIAN:         {min: 2,  max: 8,  price: 10}
+    EXPERIENCE_BOTTLE: {min: 2, max: 8,  price: 10}
+    ENDER_PEARL:      {min: 2,  max: 8,  price: 12}
+    BLAZE_ROD:        {min: 2,  max: 6,  price: 12}
+    EMERALD:          {min: 2,  max: 8,  price: 15}
+    DIAMOND:          {min: 1,  max: 4,  price: 40}
+    NAME_TAG:         {min: 1,  max: 1,  price: 60}
+    SADDLE:           {min: 1,  max: 1,  price: 80}
+    NETHERITE_SCRAP:  {min: 1,  max: 2,  price: 150}
+
+# ---------------- Spieler-Shop ----------------
+player-shop:
+  # Preisgrenzen (Coins) für das Gesamtangebot
+  min-price: 1
+  max-price: 1000000
+  # Wie viele Angebote ein Spieler gleichzeitig haben darf
+  max-listings-per-player: 5
+  # So lange bleibt ein Angebot online. Danach landet das Item in der "Abholung".
+  listing-duration-hours: 48
+
+  # --- Schutz gegen "Zwischenlager"-Missbrauch ---
+  # Gebühr beim Einstellen. Sie wird NICHT zurückerstattet (auch nicht beim Abbrechen
+  # oder Ablaufen). So kostet es immer Coins, den Shop als Lager zu nutzen.
+  listing-fee-percent: 5.0
+  min-listing-fee: 1
+  # Steuer beim Verkauf: wird dem Verkäufer vom Erlös abgezogen
+  sale-tax-percent: 5.0
+
+  # Diese Items dürfen NICHT angeboten werden
+  blacklist:
+    - BEDROCK
+    - BARRIER
+    - COMMAND_BLOCK
+    - CHAIN_COMMAND_BLOCK
+    - REPEATING_COMMAND_BLOCK
+    - STRUCTURE_BLOCK
+    - JIGSAW
+    - DEBUG_STICK
+    - LIGHT
+    - SPAWNER
+    - REINFORCED_DEEPSLATE

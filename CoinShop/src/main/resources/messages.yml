@@ -1,0 +1,167 @@
+# ============================================================
+#  CoinShop - Texte
+#  Format: MiniMessage, z. B. <gold>gold</gold>, <bold>fett</bold>, <red>rot</red>
+#  Platzhalter wie <coins> oder <player> NICHT verändern/löschen.
+#  Wichtig: Jede Zeile mit Text steht in Anführungszeichen "..."
+#  Nach Änderungen: /coinsadmin reload
+# ============================================================
+
+prefix: "<gold><bold>Coins</bold></gold> <dark_gray>»</dark_gray> <gray>"
+
+# ---------- Allgemein ----------
+only-players: "<red>Dieser Befehl ist nur für Spieler."
+no-permission: "<red>Dazu hast du keine Berechtigung."
+error: "<red>Es ist ein Fehler aufgetreten. Bitte melde das einem Admin."
+player-unknown: "<red>Der Spieler <white><player></white> ist unbekannt (er muss schon einmal auf dem Server gewesen sein)."
+invalid-amount: "<red>Bitte gib eine ganze Zahl zwischen 1 und <max> an."
+not-enough: "<red>Du hast nicht genug Coins."
+
+# ---------- Kontostand / Überweisung / Rangliste ----------
+balance-self: "Du hast <gold><coins> Coins</gold>."
+balance-other: "<white><player></white> hat <gold><coins> Coins</gold>."
+pay-usage: "<red>Benutzung: /pay [Spieler] [Betrag]"
+pay-self: "<red>Du kannst dir nicht selbst Coins überweisen."
+pay-sent: "Du hast <gold><coins> Coins</gold> an <white><player></white> überwiesen."
+pay-received: "Du hast <gold><coins> Coins</gold> von <white><player></white> erhalten."
+baltop-header: "<gold>---- Die reichsten Spieler ----"
+baltop-line: "<yellow><rank>.</yellow> <white><player></white> <dark_gray>-</dark_gray> <gold><coins> Coins</gold>"
+baltop-empty: "<gray>Noch hat niemand Coins."
+
+# ---------- Erfolge ----------
+achievement-reward: "<green>Erfolg geschafft!</green> Belohnung: <gold>+<coins> Coins</gold>"
+
+# ---------- Admin ----------
+admin-usage: "<red>Benutzung: /coinsadmin give|take|set [Spieler] [Betrag] | resetshop | reload"
+admin-given: "<white><player></white> hat <gold><coins> Coins</gold> bekommen."
+admin-taken: "<gold><coins> Coins</gold> wurden <white><player></white> abgezogen."
+admin-set: "Kontostand von <white><player></white> auf <gold><coins> Coins</gold> gesetzt."
+admin-reload: "<green>Einstellungen und Texte neu geladen."
+admin-shop-reset: "<green>Der Server-Shop wurde neu gemischt."
+admin-target-too-poor: "<red><player> hat nicht genug Coins."
+
+# ---------- Server-Shop (Kauf) ----------
+server-offer-outdated: "<red>Dieses Angebot gibt es nicht mehr. Das Menü wurde aktualisiert."
+server-limit-reached: "<red>Du hast dieses Angebot heute schon <limit>x gekauft."
+inventory-full: "<red>Dein Inventar ist zu voll. Mach Platz und versuch es nochmal."
+server-bought: "Du hast <white><amount>x <item></white> für <gold><coins> Coins</gold> gekauft."
+
+# ---------- Spieler-Shop ----------
+hold-item: "<red>Halte das Item, das du verkaufen willst, in der Hand."
+item-blacklisted: "<red>Dieses Item darf nicht im Spieler-Shop angeboten werden."
+price-range: "<red>Der Preis muss zwischen <min> und <max> Coins liegen."
+listing-limit: "<red>Du hast bereits <max> Angebote. Warte, bis eins verkauft wurde, oder brich eins ab."
+listing-fee-too-high: "<red>Dir fehlen Coins für die Einstellgebühr (<fee> Coins)."
+ask-price: "<yellow>Schreibe jetzt den <bold>Gesamtpreis</bold> in den Chat (<min> bis <max> Coins). Zum Abbrechen schreibe <white>abbrechen</white>."
+ask-price-info: "<gray>Angeboten wird: <white><amount>x <item></white> <dark_gray>|</dark_gray> Einstellgebühr: <gold><fee> Coins</gold> (wird nicht erstattet)"
+ask-cancelled: "<gray>Abgebrochen."
+ask-invalid: "<red>Das war keine gültige Zahl. Vorgang abgebrochen - starte neu über /shop."
+listing-created: "<green>Angebot erstellt:</green> <white><amount>x <item></white> für <gold><price> Coins</gold> <gray>(Gebühr: <fee> Coins)"
+listing-gone: "<red>Dieses Angebot gibt es nicht mehr."
+buy-own: "<red>Du kannst dein eigenes Angebot nicht kaufen. Du kannst es unter 'Meine Angebote' abbrechen."
+player-bought: "Du hast <white><amount>x <item></white> für <gold><price> Coins</gold> gekauft."
+listing-sold: "<green>Verkauft:</green> <white><amount>x <item></white> für <gold><coins> Coins</gold> <gray>(nach Steuer)"
+listing-cancelled: "<gray>Angebot abgebrochen. Das Item ist wieder bei dir."
+listing-cancelled-claim: "<gray>Angebot abgebrochen. Dein Inventar war voll - das Item liegt in der <white>Abholung</white>."
+listing-expired: "<yellow>Eines deiner Angebote ist abgelaufen. Du findest das Item unter <white>/shop > Spieler-Shop > Meine Angebote > Abholung</white>."
+claim-taken: "<gray>Du hast das Item abgeholt."
+claims-waiting: "<yellow>Du hast <count> Item(s) zur Abholung: <white>/shop > Spieler-Shop > Meine Angebote > Abholung</white>."
+
+# ---------- Menüs ----------
+gui:
+  filler-name: " "
+  back-name: "<!italic><red>Zurück"
+  close-name: "<!italic><red>Schließen"
+  balance-name: "<!italic><gold>Dein Kontostand"
+  balance-lore:
+    - "<!italic><white><coins> Coins"
+
+  main:
+    title: "Shop"
+    server-name: "<!italic><gold><bold>Server-Shop"
+    server-lore:
+      - "<!italic><gray>10 Angebote, jeden Tag um <white><hour>:00 Uhr</white> neu."
+      - "<!italic><gray>Feste Preise."
+      - ""
+      - "<!italic><yellow>Klicke zum Öffnen"
+    player-name: "<!italic><green><bold>Spieler-Shop"
+    player-lore:
+      - "<!italic><gray>Kaufe Items von anderen Spielern"
+      - "<!italic><gray>oder biete selbst etwas an."
+      - ""
+      - "<!italic><yellow>Klicke zum Öffnen"
+
+  server:
+    title: "Server-Shop"
+    timer-name: "<!italic><aqua>Neue Angebote in"
+    timer-lore:
+      - "<!italic><white><time>"
+    empty-name: "<!italic><red>Keine Angebote verfügbar"
+    offer-lore:
+      - ""
+      - "<!italic><gray>Preis: <gold><price> Coins"
+      - "<!italic><gray>Heute gekauft: <white><bought>/<limit>"
+      - ""
+      - "<!italic><yellow>Linksklick zum Kaufen"
+    offer-lore-unlimited:
+      - ""
+      - "<!italic><gray>Preis: <gold><price> Coins"
+      - ""
+      - "<!italic><yellow>Linksklick zum Kaufen"
+
+  player:
+    title: "Spieler-Shop (Seite <page>)"
+    listing-lore:
+      - ""
+      - "<!italic><gray>Preis: <gold><price> Coins"
+      - "<!italic><gray>Verkäufer: <white><seller>"
+      - "<!italic><gray>Läuft ab in: <white><time>"
+      - ""
+      - "<!italic><yellow>Linksklick zum Kaufen"
+    own-listing-lore:
+      - ""
+      - "<!italic><gray>Preis: <gold><price> Coins"
+      - "<!italic><green>Das ist dein Angebot"
+      - "<!italic><gray>(Abbrechen unter 'Meine Angebote')"
+    prev-name: "<!italic><yellow>Vorherige Seite"
+    next-name: "<!italic><yellow>Nächste Seite"
+    mine-name: "<!italic><aqua>Meine Angebote"
+    mine-lore:
+      - "<!italic><gray>Deine Angebote ansehen,"
+      - "<!italic><gray>abbrechen und Abholung."
+    sell-name: "<!italic><green><bold>Item anbieten"
+    sell-lore:
+      - "<!italic><gray>1. Item in die Hand nehmen"
+      - "<!italic><gray>2. Hier klicken"
+      - "<!italic><gray>3. Gesamtpreis in den Chat schreiben"
+      - ""
+      - "<!italic><gray>Einstellgebühr: <white><fee_percent>%</white> (mind. <min_fee> Coins)"
+      - "<!italic><gray>Verkaufssteuer: <white><tax_percent>%"
+      - "<!italic><dark_gray>Alternativ: /shop sell [Preis]"
+    empty-name: "<!italic><gray>Noch keine Angebote"
+
+  mine:
+    title: "Meine Angebote"
+    listing-lore:
+      - ""
+      - "<!italic><gray>Preis: <gold><price> Coins"
+      - "<!italic><gray>Läuft ab in: <white><time>"
+      - ""
+      - "<!italic><red>Linksklick: Angebot abbrechen"
+      - "<!italic><dark_gray>(Gebühr wird nicht erstattet)"
+    claims-name: "<!italic><gold>Abholung"
+    claims-lore:
+      - "<!italic><white><count> Item(s) warten"
+      - "<!italic><gray>Abgelaufene oder abgebrochene"
+      - "<!italic><gray>Angebote landen hier."
+    empty-name: "<!italic><gray>Du hast keine aktiven Angebote"
+
+  claims:
+    title: "Abholung"
+    lore:
+      - ""
+      - "<!italic><gray>Grund: <white><reason>"
+      - ""
+      - "<!italic><yellow>Linksklick zum Abholen"
+    reason-expired: "Angebot abgelaufen"
+    reason-cancelled: "Angebot abgebrochen"
+    empty-name: "<!italic><gray>Nichts zum Abholen"
